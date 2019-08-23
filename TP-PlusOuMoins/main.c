@@ -19,21 +19,22 @@ int main(int argc, char *argv[]) // Équivalent de int main()
     
     nombreMystere = (rand() % (MAX - MIN + 1)) + MIN;
     
-    int nombreEntree = 0;
+    int nombreEntre = 0;
+    int coups = 0;
     
-    while(nombreMystere != nombreEntree){
+    for(coups = 0; nombreMystere != nombreEntre; coups++){
         printf("Quel est le nombre ? ");
-        scanf("%d", &nombreEntree);
+        scanf("%d", &nombreEntre);
         
-        if(nombreMystere > nombreEntree) {
+        if(nombreMystere > nombreEntre) {
             printf("C'est plus !\n\n");
         }
-        else if (nombreMystere < nombreEntree) {
+        else if (nombreMystere < nombreEntre) {
             printf("C'est moins !\n\n");
         }
     }
     
-    printf("Bravo, vous avez trouve le nombre mystère !!!\n\n");
+    printf("\n\nFélicitations ! Vous avez trouvé le nombre mystère en %d coups !\n\n", coups);
     
     
     return 0;
