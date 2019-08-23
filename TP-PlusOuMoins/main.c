@@ -19,14 +19,30 @@ int main(int argc, char *argv[]) // Équivalent de int main()
     while (continuerPartie == 1) {
         const int MAX = 100, MIN = 1;
         int nombreMystere = 0;
+        int nombreDeJoueur = 0;
         
-        nombreMystere = (rand() % (MAX - MIN + 1)) + MIN;
+        while (nombreDeJoueur != 1 && nombreDeJoueur != 2) {
+            printf("Combien êtes-vous ?\n");
+            printf("Soit 1, soit 2.\n");
+            scanf("%d", &nombreDeJoueur);
+        }
+        
+        if(nombreDeJoueur == 1){
+            printf("Vous serez donc seul !\n\n");
+            nombreMystere = (rand() % (MAX - MIN + 1)) + MIN;
+        }
+        else {
+            printf("\nVous serez donc deux !\n");
+            printf("Maintenant, veuillez choisir un joueur pour entrer un nombre discrètement.\n");
+            scanf("%d", &nombreMystere);
+        }
+        
         
         int nombreEntre = 0;
         int coups = 0;
         
         for(coups = 0; nombreMystere != nombreEntre; coups++){
-            printf("Quel est le nombre ? ");
+            printf("\nQuel est le nombre ? ");
             scanf("%d", &nombreEntre);
             
             if(nombreMystere > nombreEntre) {
