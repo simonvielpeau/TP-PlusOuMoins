@@ -1,3 +1,5 @@
+# PlusOuMoins fait en C
+
 Le principe est le suivant.
 
 L'ordinateur tire au sort un nombre entre 1 et 100.
